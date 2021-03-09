@@ -1,0 +1,109 @@
+<rss version="2.0">
+    <channel>
+        <item>
+            <title>The Flash S07E02</title>
+            <pubDate>2021-03-10</pubDate>
+            <tv:show_id>115</tv:show_id>
+            <tv:show_name>The Flash (2014)</tv:show_name>
+            <tv:episode_id>1960631</tv:episode_id>
+        </item>
+        <item>
+            <title>Black Lightning S04E05</title>
+            <pubDate>2021-03-09</pubDate>
+            <tv:show_id>943</tv:show_id>
+            <tv:show_name>Black Lightning</tv:show_name>
+            <tv:episode_id>1987131</tv:episode_id>
+        </item>
+        <item>
+            <title>WandaVision S01E09</title>
+            <pubDate>2021-03-05</pubDate>
+            <tv:show_id>1388</tv:show_id>
+            <tv:show_name>WandaVision</tv:show_name>
+            <tv:episode_id>138738</tv:episode_id>
+        </item>
+        <item>
+            <title>Young Sheldon S04E10</title>
+            <pubDate>2021-03-05</pubDate>
+            <tv:show_id>881</tv:show_id>
+            <tv:show_name>Young Sheldon</tv:show_name>
+            <tv:episode_id>138721</tv:episode_id>
+        </item>
+        <item>
+            <title>The Flash S07E01</title>
+            <pubDate>2021-03-03</pubDate>
+            <tv:show_id>115</tv:show_id>
+            <tv:show_name>The Flash (2014)</tv:show_name>
+            <tv:episode_id>138585</tv:episode_id>
+        </item>
+        <item>
+            <title>Black Lightning S04E04</title>
+            <pubDate>2021-03-02</pubDate>
+            <tv:show_id>943</tv:show_id>
+            <tv:show_name>Black Lightning</tv:show_name>
+            <tv:episode_id>138488</tv:episode_id>
+        </item>
+        <item>
+            <title>Batwoman S02E06</title>
+            <pubDate>2021-03-01</pubDate>
+            <tv:show_id>1206</tv:show_id>
+            <tv:show_name>Batwoman</tv:show_name>
+            <tv:episode_id>138412</tv:episode_id>
+        </item>
+        <item>
+            <title>WandaVision S01E08</title>
+            <pubDate>2021-02-26</pubDate>
+            <tv:show_id>1388</tv:show_id>
+            <tv:show_name>WandaVision</tv:show_name>
+            <tv:episode_id>138267</tv:episode_id>
+        </item>
+        <item>
+            <title>Young Sheldon S04E09</title>
+            <pubDate>2021-02-26</pubDate>
+            <tv:show_id>881</tv:show_id>
+            <tv:show_name>Young Sheldon</tv:show_name>
+            <tv:episode_id>138248</tv:episode_id>
+        </item>
+        <item>
+            <title>Black Lightning S04E03</title>
+            <pubDate>2021-02-23</pubDate>
+            <tv:show_id>943</tv:show_id>
+            <tv:show_name>Black Lightning</tv:show_name>
+            <tv:episode_id>138030</tv:episode_id>
+        </item>
+        <item>
+            <title>Batwoman S02E05</title>
+            <pubDate>2021-02-22</pubDate>
+            <tv:show_id>1206</tv:show_id>
+            <tv:show_name>Batwoman</tv:show_name>
+            <tv:episode_id>137949</tv:episode_id>
+        </item>
+        <item>
+            <title>WandaVision S01E07</title>
+            <pubDate>2021-02-19</pubDate>
+            <tv:show_id>1388</tv:show_id>
+            <tv:show_name>WandaVision</tv:show_name>
+            <tv:episode_id>137761</tv:episode_id>
+        </item>
+        <item>
+            <title>Young Sheldon S04E08</title>
+            <pubDate>2021-02-19</pubDate>
+            <tv:show_id>881</tv:show_id>
+            <tv:show_name>Young Sheldon</tv:show_name>
+            <tv:episode_id>137748</tv:episode_id>
+        </item>
+        <item>
+            <title>Black Lightning S04E02</title>
+            <pubDate>2021-02-16</pubDate>
+            <tv:show_id>943</tv:show_id>
+            <tv:show_name>Black Lightning</tv:show_name>
+            <tv:episode_id>137513</tv:episode_id>
+        </item>
+        <item>
+            <title>Batwoman S02E04</title>
+            <pubDate>2021-02-15</pubDate>
+            <tv:show_id>1206</tv:show_id>
+            <tv:show_name>Batwoman</tv:show_name>
+            <tv:episode_id>137471</tv:episode_id>
+        </item>
+    </channel>
+</rss>

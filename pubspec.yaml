@@ -1,0 +1,42 @@
+name: flutter_navigator_2_example
+description: A new Flutter project.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  freezed_annotation: ^0.14.0
+  get_it: ^6.0.0
+  injectable: ^1.2.0
+  intl: ^0.17.0
+  json_annotation: ^4.0.0
+  provider: ^5.0.0
+  rxdart: ^0.26.0
+  shared_preferences: ^2.0.3
+  xml: ^5.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  build_runner: ^1.11.5
+  freezed: ^0.14.0+1
+  injectable_generator: ^1.2.0
+  json_serializable: ^4.0.2
+  lint: ^1.5.3
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/episodes/
+
+scripts:
+  go: flutter run -t lib/main.dart
+  all: flutter run -t lib/main.dart -d all
+  deps: flutter pub run
+  build: flutter pub run build_runner build --delete-conflicting-outputs
