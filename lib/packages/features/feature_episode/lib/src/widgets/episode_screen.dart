@@ -62,8 +62,6 @@ class _Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final vm = Provider.of<EpisodeViewModel>(context);
-
     return Align(
       alignment: Alignment.topCenter,
       child: Stack(

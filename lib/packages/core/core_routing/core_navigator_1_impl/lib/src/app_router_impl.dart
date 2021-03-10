@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_navigator_2_example/packages/core/core_data_manager/core_data_manager_interface/lib/core_data_manager_interface.dart';
-import 'package:flutter_navigator_2_example/packages/core/core_routing/core_routing_interface/lib/core_routing_interface.dart';
-import 'package:flutter_navigator_2_example/packages/core/core_storage_provider/core_storage_provider_interface/lib/core_storage_provider_interface.dart';
+import 'package:flutter_navigator_2_example/packages/core/core_routing/core_navigator_1_interface/lib/core_navigator_1_interface.dart';
+import 'package:flutter_navigator_2_example/packages/core/core_routing/core_routing_shared/core_routing_shared_interface/lib/core_routing_shared_interface.dart';
 import 'package:flutter_navigator_2_example/packages/features/feature_episode/lib/feature_episode.dart';
 import 'package:flutter_navigator_2_example/packages/features/feature_home/lib/feature_home.dart';
 import 'package:flutter_navigator_2_example/packages/features/feature_login/lib/feature_login.dart';
@@ -11,11 +11,12 @@ import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: AppRouter)
 class AppRouterImpl implements AppRouter {
-  final FlagStorageProvider _flagStorageProvider;
+  final InitialRouteProvider _initialRouteProvider;
+
   final GlobalKey<NavigatorState> _navigatorKey;
 
   AppRouterImpl(
-    this._flagStorageProvider,
+    this._initialRouteProvider,
   ) : _navigatorKey = GlobalKey<NavigatorState>();
 
   @override
@@ -88,13 +89,7 @@ class AppRouterImpl implements AppRouter {
   }
 
   @override
-  String get initialRoute {
-    if (!_flagStorageProvider.isSignedIn()) {
-      return Routes.login;
-    }
-
-    return Routes.home;
-  }
+  String get initialRoute => _initialRouteProvider.initialRoute;
 
   @override
   Future<void> showHome() async {
