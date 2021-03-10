@@ -56,6 +56,6 @@ class ShowRssApiProviderImpl implements ShowRssApiProvider {
     final upcomingEpisodes = await getPersonalUpcomingEpisodes();
     final allEpisodes = [...recentEpisodes, ...upcomingEpisodes];
 
-    return allEpisodes.firstWhere((ep) => ep.episodeId == '$upcomingEpisodes');
+    return allEpisodes.firstWhere((ep) => ep.episodeId == '$episodeId');
   }
 }

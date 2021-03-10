@@ -1,9 +1,11 @@
 import 'package:flutter_navigator_2_example/packages/core/core_authentication/core_authentication_interface/lib/core_authentication_interface.dart';
 import 'package:flutter_navigator_2_example/packages/core/core_messaging/core_messaging_interface/lib/core_messaging_interface.dart';
+import 'package:flutter_navigator_2_example/packages/core/core_routing/core_routing_interface/lib/core_routing_interface.dart';
 import 'package:injectable/injectable.dart';
 
 @Injectable()
 class LoginViewModel {
+  final AppRouter _router;
   final AuthenticationProvider _authenticationProvider;
   final SnackBarService _snackBarService;
 
@@ -11,6 +13,7 @@ class LoginViewModel {
   String? _password;
 
   LoginViewModel(
+    this._router,
     this._authenticationProvider,
     this._snackBarService,
   );
@@ -44,5 +47,7 @@ class LoginViewModel {
 
     final user = User(username: username, password: password);
     await _authenticationProvider.signIn(user);
+
+    await _router.showHome();
   }
 }

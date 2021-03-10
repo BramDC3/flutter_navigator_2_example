@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_navigator_2_example/packages/core/core_messaging/core_messaging_interface/lib/core_messaging_interface.dart';
-import 'package:flutter_navigator_2_example/packages/features/home/widgets/home_screen_provider.dart';
-import 'package:flutter_navigator_2_example/packages/features/login/widgets/login_screen_provider.dart';
-import 'package:flutter_navigator_2_example/packages/features/shows/widgets/tv_show_screen_provider.dart';
+import 'package:flutter_navigator_2_example/packages/core/core_routing/core_routing_interface/lib/core_routing_interface.dart';
 import 'package:provider/provider.dart';
 
 class App extends StatelessWidget {
@@ -10,6 +8,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appRouter = Provider.of<AppRouter>(context);
     final snackBarService = Provider.of<SnackBarService>(context);
 
     return MaterialApp(
@@ -19,7 +18,9 @@ class App extends StatelessWidget {
         brightness: Brightness.dark,
       ),
       scaffoldMessengerKey: snackBarService.messengerKey,
-      home: const TvShowScreenProvider(showName: 'WandaVision'),
+      navigatorKey: appRouter.navigatorKey,
+      onGenerateRoute: appRouter.onGenerateRoute,
+      initialRoute: appRouter.initialRoute,
     );
   }
 }

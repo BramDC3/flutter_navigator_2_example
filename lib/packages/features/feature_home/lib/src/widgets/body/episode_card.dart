@@ -27,7 +27,7 @@ class EpisodeCard extends StatelessWidget {
       child: Stack(
         children: [
           Positioned.fill(
-            child: _EpisodeCardImage(imageUrl: episode.imageUrl),
+            child: _EpisodeCardImage(episode: episode),
           ),
           Align(
             alignment: Alignment.bottomLeft,
@@ -43,10 +43,10 @@ class EpisodeCard extends StatelessWidget {
 }
 
 class _EpisodeCardImage extends StatelessWidget {
-  final String imageUrl;
+  final TvShowEpisode episode;
 
   const _EpisodeCardImage({
-    required this.imageUrl,
+    required this.episode,
   });
 
   @override
@@ -55,10 +55,13 @@ class _EpisodeCardImage extends StatelessWidget {
       borderRadius: BorderRadius.circular(
         AppDimensions.cardBorderRadius,
       ),
-      child: Image.asset(
-        imageUrl,
-        fit: BoxFit.fitWidth,
-        alignment: Alignment.topCenter,
+      child: Hero(
+        tag: episode.episodeId,
+        child: Image.asset(
+          episode.imageUrl,
+          fit: BoxFit.fitWidth,
+          alignment: Alignment.topCenter,
+        ),
       ),
     );
   }

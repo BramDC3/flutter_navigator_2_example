@@ -1,9 +1,11 @@
 import 'package:flutter_navigator_2_example/packages/core/core_data_manager/core_data_manager_interface/lib/core_data_manager_interface.dart';
+import 'package:flutter_navigator_2_example/packages/core/core_routing/core_routing_interface/lib/core_routing_interface.dart';
 import 'package:injectable/injectable.dart';
 import 'package:rxdart/subjects.dart';
 
 @Injectable()
 class HomeViewModel {
+  final AppRouter _router;
   final DataManager _dataManager;
 
   final _recentEpisodes = BehaviorSubject<Iterable<TvShowEpisode>>();
@@ -13,6 +15,7 @@ class HomeViewModel {
   Stream<Iterable<TvShowEpisode>> get upcomingEpisodes => _upcomingEpisodes.stream;
 
   HomeViewModel(
+    this._router,
     this._dataManager,
   ) {
     _init();
@@ -26,7 +29,9 @@ class HomeViewModel {
     _upcomingEpisodes.add(upcomingEpisodes);
   }
 
-  Future<void> onTvShowEpisodePressed(TvShowEpisode episode) async {}
+  Future<void> onTvShowEpisodePressed(TvShowEpisode episode) async {
+    await _router.showTvShowEpisode(episode.episodeId, episode);
+  }
 
   void dispose() {
     _recentEpisodes.close();
