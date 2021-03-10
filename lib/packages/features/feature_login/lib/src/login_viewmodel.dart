@@ -1,15 +1,11 @@
 import 'package:flutter_navigator_2_example/packages/core/core_authentication/core_authentication_interface/lib/core_authentication_interface.dart';
 import 'package:flutter_navigator_2_example/packages/core/core_messaging/core_messaging_interface/lib/core_messaging_interface.dart';
-import 'package:flutter_navigator_2_example/packages/core/core_routing/core_navigator_1/core_navigator_1_interface/lib/core_navigator_1_interface.dart';
-import 'package:flutter_navigator_2_example/packages/core/core_routing/core_navigator_2/core_navigator_2_interface/lib/core_navigator_2_interface.dart';
+import 'package:flutter_navigator_2_example/packages/core/core_routing/core_routing_shared/core_routing_shared_interface/lib/core_routing_shared_interface.dart';
 import 'package:injectable/injectable.dart';
 
 @Injectable()
 class LoginViewModel {
-  // Navigator 1.0
-  final AppRouter _router;
-  // Navigator 2.0
-  final RoutePageManager _routePageManager;
+  final RouterHelper _routerHelper;
   final AuthenticationProvider _authenticationProvider;
   final SnackBarService _snackBarService;
 
@@ -17,8 +13,7 @@ class LoginViewModel {
   String? _password;
 
   LoginViewModel(
-    this._router,
-    this._routePageManager,
+    this._routerHelper,
     this._authenticationProvider,
     this._snackBarService,
   );
@@ -53,13 +48,6 @@ class LoginViewModel {
     final user = User(username: username, password: password);
     await _authenticationProvider.signIn(user);
 
-    await showHome();
-  }
-
-  Future<void> showHome() async {
-    // Navigator 1.0
-    // await _router.showHome();
-    // Navigator 2.0
-    await _routePageManager.showHome();
+    await _routerHelper.showHome();
   }
 }

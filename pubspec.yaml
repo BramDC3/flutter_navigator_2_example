@@ -6,10 +6,10 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  auto_route: ^1.0.0-beta.10
-  cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
+  auto_route: ^1.0.0-beta.10
+  cupertino_icons: ^1.0.2
   freezed_annotation: ^0.14.0
   get_it: ^6.0.0
   injectable: ^1.2.0
@@ -18,13 +18,14 @@ dependencies:
   provider: ^5.0.0
   rxdart: ^0.26.0
   shared_preferences: ^2.0.3
+  url_strategy: ^0.2.0
   xml: ^5.0.2
 
 dev_dependencies:
-  auto_route_generator: ^1.0.0-beta.11
-  build_runner: ^1.11.5
   flutter_test:
     sdk: flutter
+  auto_route_generator: ^1.0.0-beta.11
+  build_runner: ^1.11.5
   freezed: ^0.14.0+1
   injectable_generator: ^1.2.0
   json_serializable: ^4.0.2

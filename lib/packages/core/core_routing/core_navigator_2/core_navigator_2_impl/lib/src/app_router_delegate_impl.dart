@@ -22,6 +22,11 @@ class AppRouterDelegateImpl extends RouterDelegate<AppPath>
   AppPath get currentConfiguration => _pageManager.currentPath;
 
   @override
+  Future<void> setInitialRoutePath(AppPath configuration) async {
+    await _pageManager.setInitialRoutePath(configuration);
+  }
+
+  @override
   Future<void> setNewRoutePath(AppPath configuration) async {
     await _pageManager.setNewRoutePath(configuration);
   }

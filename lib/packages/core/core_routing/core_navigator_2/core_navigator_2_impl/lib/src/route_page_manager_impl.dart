@@ -19,12 +19,14 @@ class RoutePageManagerImpl extends ChangeNotifier implements RoutePageManager {
   static const _unknownKey = 'unknown';
 
   final RouteParser _routeParser;
+  final InitialRouteProvider _initialRouteProvider;
 
   final GlobalKey<NavigatorState> _navigatorKey;
   final List<Page> _pages;
 
   RoutePageManagerImpl(
     this._routeParser,
+    this._initialRouteProvider,
   )   : _navigatorKey = GlobalKey<NavigatorState>(),
         _pages = [];
 
@@ -36,6 +38,12 @@ class RoutePageManagerImpl extends ChangeNotifier implements RoutePageManager {
 
   @override
   AppPath get currentPath => _routeParser.parseRoute(_pages.last.name!);
+
+  @override
+  Future<void> setInitialRoutePath(AppPath _) {
+    setNewRoutePath(_routeParser.parseRoute(_initialRouteProvider.initialRoute));
+    return SynchronousFuture(null);
+  }
 
   @override
   Future<void> setNewRoutePath(AppPath path) {
@@ -75,9 +83,8 @@ class RoutePageManagerImpl extends ChangeNotifier implements RoutePageManager {
           return;
         }
 
-        final params = TvShowScreenParameters(showName: showName);
         _addPage(
-          TvShowScreenProvider(tvShowScreenParameters: params),
+          TvShowScreenProvider(showName: showName),
           valueKey,
           Routes.getTvShowRoute(showName),
         );
@@ -91,9 +98,8 @@ class RoutePageManagerImpl extends ChangeNotifier implements RoutePageManager {
           return;
         }
 
-        final params = EpisodeScreenParameters(episodeId: episodeId, episode: episode);
         _addPage(
-          EpisodeScreenProvider(episodeScreenParameters: params),
+          EpisodeScreenProvider(episodeId: episodeId, episode: episode),
           valueKey,
           Routes.getEpisodeRoute(episodeId),
         );
@@ -128,11 +134,6 @@ class RoutePageManagerImpl extends ChangeNotifier implements RoutePageManager {
   @override
   Future<void> showHome() async {
     await setNewRoutePath(const AppPath.home());
-  }
-
-  @override
-  Future<void> showLogin() async {
-    await setNewRoutePath(const AppPath.login());
   }
 
   @override

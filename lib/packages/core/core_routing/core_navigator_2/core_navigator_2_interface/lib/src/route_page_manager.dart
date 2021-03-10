@@ -9,13 +9,13 @@ abstract class RoutePageManager extends ChangeNotifier {
 
   AppPath get currentPath;
 
+  Future<void> setInitialRoutePath(AppPath configuration);
+
   Future<void> setNewRoutePath(AppPath configuration);
 
   void didPop(Page page);
 
   Future<void> showHome();
-
-  Future<void> showLogin();
 
   Future<void> showTvShow(String showName);
 

@@ -1,15 +1,11 @@
 import 'package:flutter_navigator_2_example/packages/core/core_data_manager/core_data_manager_interface/lib/core_data_manager_interface.dart';
-import 'package:flutter_navigator_2_example/packages/core/core_routing/core_navigator_1/core_navigator_1_interface/lib/core_navigator_1_interface.dart';
-import 'package:flutter_navigator_2_example/packages/core/core_routing/core_navigator_2/core_navigator_2_interface/lib/core_navigator_2_interface.dart';
+import 'package:flutter_navigator_2_example/packages/core/core_routing/core_routing_shared/core_routing_shared_interface/lib/core_routing_shared_interface.dart';
 import 'package:injectable/injectable.dart';
 import 'package:rxdart/subjects.dart';
 
 @Injectable()
 class HomeViewModel {
-  // Navigator 1.0
-  final AppRouter _router;
-  // Navigator 2.0
-  final RoutePageManager _routePageManager;
+  final RouterHelper _routerHelper;
   final DataManager _dataManager;
 
   final _recentEpisodes = BehaviorSubject<Iterable<TvShowEpisode>>();
@@ -19,8 +15,7 @@ class HomeViewModel {
   Stream<Iterable<TvShowEpisode>> get upcomingEpisodes => _upcomingEpisodes.stream;
 
   HomeViewModel(
-    this._router,
-    this._routePageManager,
+    this._routerHelper,
     this._dataManager,
   ) {
     _init();
@@ -35,10 +30,7 @@ class HomeViewModel {
   }
 
   Future<void> onTvShowEpisodePressed(TvShowEpisode episode) async {
-    // Navigator 1.0
-    // await _router.showTvShowEpisode(episode.episodeId, episode);
-    // Navigator 2.0
-    await _routePageManager.showTvShowEpisode(episode.episodeId, episode);
+    await _routerHelper.showTvShowEpisode(episode.episodeId, episode);
   }
 
   void dispose() {

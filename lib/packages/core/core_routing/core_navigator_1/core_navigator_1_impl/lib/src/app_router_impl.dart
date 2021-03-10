@@ -45,13 +45,12 @@ class AppRouterImpl implements AppRouter {
     // Tv show.
     if (route.contains(Routes.tvShow)) {
       if (args is TvShowScreenParameters) {
-        return TvShowScreenProvider(tvShowScreenParameters: args);
+        return TvShowScreenProvider(showName: args.showName);
       }
 
       final showName = Routes.parseShowNameFromRoute(route);
       if (showName != null) {
-        final screenArgs = TvShowScreenParameters(showName: showName);
-        return TvShowScreenProvider(tvShowScreenParameters: screenArgs);
+        return TvShowScreenProvider(showName: showName);
       }
 
       return const UnknownScreenProvider();
@@ -60,13 +59,12 @@ class AppRouterImpl implements AppRouter {
     // Episode route.
     if (route.contains(Routes.episode)) {
       if (args is EpisodeScreenParameters) {
-        return EpisodeScreenProvider(episodeScreenParameters: args);
+        return EpisodeScreenProvider(episodeId: args.episodeId, episode: args.episode);
       }
 
       final episodeId = Routes.parseEpisodeIdFromRoute(route);
       if (episodeId != null) {
-        final screenArgs = EpisodeScreenParameters(episodeId: episodeId);
-        return EpisodeScreenProvider(episodeScreenParameters: screenArgs);
+        return EpisodeScreenProvider(episodeId: episodeId);
       }
 
       return const UnknownScreenProvider();
@@ -78,11 +76,6 @@ class AppRouterImpl implements AppRouter {
         return const HomeScreenProvider();
       case Routes.login:
         return const LoginScreenProvider();
-      case Routes.episode:
-        if (args is EpisodeScreenParameters) {
-          return EpisodeScreenProvider(episodeScreenParameters: args);
-        }
-        return const UnknownScreenProvider();
       default:
         return const UnknownScreenProvider();
     }
@@ -94,11 +87,6 @@ class AppRouterImpl implements AppRouter {
   @override
   Future<void> showHome() async {
     await _navigatorKey.currentState?.pushReplacementNamed(Routes.home);
-  }
-
-  @override
-  Future<void> showLogin() async {
-    await _navigatorKey.currentState?.pushReplacementNamed(Routes.login);
   }
 
   @override
