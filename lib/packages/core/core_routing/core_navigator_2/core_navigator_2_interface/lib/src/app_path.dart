@@ -4,7 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'app_path.freezed.dart';
 
 @freezed
-abstract class AppPath with _$AppPath {
+class AppPath with _$AppPath {
   const factory AppPath.home() = HomePath;
   const factory AppPath.login() = LoginPath;
   const factory AppPath.tvShow(String showName) = TvShowPath;

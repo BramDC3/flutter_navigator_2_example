@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_navigator_2_example/packages/core/core_data_manager/core_data_manager_interface/lib/core_data_manager_interface.dart';
-import 'package:flutter_navigator_2_example/packages/core/core_routing/core_navigator_1_interface/lib/core_navigator_1_interface.dart';
+import 'package:flutter_navigator_2_example/packages/core/core_routing/core_navigator_1/core_navigator_1_interface/lib/core_navigator_1_interface.dart';
 import 'package:flutter_navigator_2_example/packages/core/core_routing/core_routing_shared/core_routing_shared_interface/lib/core_routing_shared_interface.dart';
 import 'package:flutter_navigator_2_example/packages/features/feature_episode/lib/feature_episode.dart';
 import 'package:flutter_navigator_2_example/packages/features/feature_home/lib/feature_home.dart';

@@ -1,9 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_navigator_2_example/packages/core/core_data_manager/core_data_manager_interface/lib/src/tv_shows/entities/tv_show_episode.dart';
-import 'package:flutter_navigator_2_example/packages/core/core_routing/core_navigator_2_interface/lib/core_navigator_2_interface.dart';
+import 'package:flutter_navigator_2_example/packages/core/core_routing/core_navigator_2/core_navigator_2_interface/lib/core_navigator_2_interface.dart';
 import 'package:flutter_navigator_2_example/packages/core/core_routing/core_routing_shared/core_routing_shared_interface/lib/core_routing_shared_interface.dart';
-import 'package:flutter_navigator_2_example/packages/core/core_storage_provider/core_storage_provider_interface/lib/core_storage_provider_interface.dart';
 import 'package:flutter_navigator_2_example/packages/features/feature_episode/lib/feature_episode.dart';
 import 'package:flutter_navigator_2_example/packages/features/feature_home/lib/feature_home.dart';
 import 'package:flutter_navigator_2_example/packages/features/feature_login/lib/feature_login.dart';
