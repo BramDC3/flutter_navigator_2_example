@@ -40,8 +40,13 @@ class RoutePageManagerImpl extends ChangeNotifier implements RoutePageManager {
   AppPath get currentPath => _routeParser.parseRoute(_pages.last.name!);
 
   @override
-  Future<void> setInitialRoutePath(AppPath _) {
-    setNewRoutePath(_routeParser.parseRoute(_initialRouteProvider.initialRoute));
+  Future<void> setInitialRoutePath(AppPath path) {
+    if (path == const AppPath.home()) {
+      setNewRoutePath(_routeParser.parseRoute(_initialRouteProvider.initialRoute));
+    } else {
+      setNewRoutePath(path);
+    }
+
     return SynchronousFuture(null);
   }
 

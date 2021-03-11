@@ -11,11 +11,11 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Navigator 1.0
-    // final appRouter = di.get<AppRouter>();
+    final appRouter = di.get<AppRouter>();
 
     // Navigator 2.0
-    // final appRouterDelegate = di.get<AppRouterDelegate>();
-    // final appRouteInformationParser = di.get<AppRouteInformationParser>();
+    final appRouterDelegate = di.get<AppRouterDelegate>();
+    final appRouteInformationParser = di.get<AppRouteInformationParser>();
 
     // Auto Route
     final autoRouter = di.get<AppAutoRouter>();
@@ -23,9 +23,9 @@ class App extends StatelessWidget {
     final snackBarService = di.get<SnackBarService>();
 
     // Navigator 1.0
-    // return MaterialApp(
+    return MaterialApp(
     // Navigator 2.0 || Auto Route
-    return MaterialApp.router(
+    // return MaterialApp.router(
       title: 'Navigator 2.0 Example',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -35,17 +35,17 @@ class App extends StatelessWidget {
       ),
       scaffoldMessengerKey: snackBarService.messengerKey,
       // Navigator 1.0
-      // navigatorKey: appRouter.navigatorKey,
-      // onGenerateRoute: appRouter.onGenerateRoute,
-      // initialRoute: appRouter.initialRoute,
+      navigatorKey: appRouter.navigatorKey,
+      onGenerateRoute: appRouter.onGenerateRoute,
+      initialRoute: appRouter.initialRoute,
 
       // Navigator 2.0
       // routerDelegate: appRouterDelegate,
       // routeInformationParser: appRouteInformationParser,
 
       // Auto Route
-      routerDelegate: autoRouter.delegate(),
-      routeInformationParser: autoRouter.defaultRouteParser(),
+      // routerDelegate: autoRouter.delegate(),
+      // routeInformationParser: autoRouter.defaultRouteParser(),
     );
   }
 }

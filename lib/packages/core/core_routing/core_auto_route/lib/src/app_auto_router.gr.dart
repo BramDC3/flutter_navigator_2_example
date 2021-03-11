@@ -7,12 +7,15 @@
 import 'package:auto_route/auto_route.dart' as _i1;
 import 'package:flutter/material.dart' as _i2;
 
-import '../../../../../features/feature_episode/lib/feature_episode.dart' as _i7;
+import '../../../../../features/feature_episode/lib/feature_episode.dart'
+    as _i7;
 import '../../../../../features/feature_home/lib/feature_home.dart' as _i4;
 import '../../../../../features/feature_login/lib/feature_login.dart' as _i5;
-import '../../../../../features/feature_tv_show/lib/feature_tv_show.dart' as _i6;
+import '../../../../../features/feature_tv_show/lib/feature_tv_show.dart'
+    as _i6;
 import '../../../../../ui_components/lib/ui_components.dart' as _i8;
-import '../../../../core_data_manager/core_data_manager_interface/lib/core_data_manager_interface.dart' as _i9;
+import '../../../../core_data_manager/core_data_manager_interface/lib/core_data_manager_interface.dart'
+    as _i9;
 import 'guards/auth_guard.dart' as _i3;
 
 class AppAutoRouter extends _i1.RootStackRouter {
@@ -30,12 +33,16 @@ class AppAutoRouter extends _i1.RootStackRouter {
     },
     TvShowRoute.name: (entry) {
       var route = entry.routeData.as<TvShowRoute>();
-      return _i1.AdaptivePage(entry: entry, child: _i6.TvShowScreenProvider(showName: route.showName));
+      return _i1.AdaptivePage(
+          entry: entry,
+          child: _i6.TvShowScreenProvider(showName: route.showName));
     },
     EpisodeRoute.name: (entry) {
       var route = entry.routeData.as<EpisodeRoute>();
       return _i1.AdaptivePage(
-          entry: entry, child: _i7.EpisodeScreenProvider(episodeId: route.episodeId, episode: route.episode));
+          entry: entry,
+          child: _i7.EpisodeScreenProvider(
+              episodeId: route.episodeId, episode: route.episode));
     },
     UnknownRoute.name: (entry) {
       return _i1.AdaptivePage(entry: entry, child: _i8.UnknownScreenProvider());
@@ -45,13 +52,18 @@ class AppAutoRouter extends _i1.RootStackRouter {
   @override
   List<_i1.RouteConfig> get routes => [
         _i1.RouteConfig<HomeRoute>(HomeRoute.name,
-            path: '/', routeBuilder: (match) => HomeRoute.fromMatch(match), guards: [authGuard]),
+            path: '/',
+            routeBuilder: (match) => HomeRoute.fromMatch(match),
+            guards: [authGuard]),
         _i1.RouteConfig<LoginRoute>(LoginRoute.name,
-            path: 'login', routeBuilder: (match) => LoginRoute.fromMatch(match)),
+            path: 'login',
+            routeBuilder: (match) => LoginRoute.fromMatch(match)),
         _i1.RouteConfig<TvShowRoute>(TvShowRoute.name,
-            path: '/tv_show', routeBuilder: (match) => TvShowRoute.fromMatch(match)),
+            path: '/tv_show',
+            routeBuilder: (match) => TvShowRoute.fromMatch(match)),
         _i1.RouteConfig<EpisodeRoute>(EpisodeRoute.name,
-            path: '/episode', routeBuilder: (match) => EpisodeRoute.fromMatch(match)),
+            path: '/episode',
+            routeBuilder: (match) => EpisodeRoute.fromMatch(match)),
         _i1.RouteConfig<UnknownRoute>(UnknownRoute.name,
             path: '*', routeBuilder: (match) => UnknownRoute.fromMatch(match))
       ];
@@ -74,7 +86,8 @@ class LoginRoute extends _i1.PageRouteInfo {
 }
 
 class TvShowRoute extends _i1.PageRouteInfo {
-  TvShowRoute({required this.showName}) : super(name, path: '/tv_show', queryParams: {'showName': showName});
+  TvShowRoute({required this.showName})
+      : super(name, path: '/tv_show', queryParams: {'showName': showName});
 
   TvShowRoute.fromMatch(_i1.RouteMatch match)
       : showName = match.queryParams.getString('showName'),
